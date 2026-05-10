@@ -1,0 +1,1266 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>The Desk · Menzie Kee, MEXC VIP Relationship Manager</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          paper:    '#F1E6D2',
+          paper2:   '#E9DBC1',
+          paper3:   '#DCCBAB',
+          rule:     '#3A3128',
+          rule2:    '#C0AE8E',
+          ink:      '#1B1815',
+          ink2:     '#3B342B',
+          ink3:     '#6F6555',
+          ink4:     '#9A8D77',
+          oxblood:  '#822026',
+          oxbloodD: '#5B161B',
+          gold:     '#A47324',
+          teal:     '#185660',
+          olive:    '#5B5A1F',
+          plum:     '#5C2347',
+        },
+        fontFamily: {
+          display: ['Inter', 'system-ui', 'sans-serif'],
+          serif:   ['Inter', 'system-ui', 'sans-serif'],
+          sans:    ['Inter', 'system-ui', 'sans-serif'],
+          mono:    ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+        },
+      }
+    }
+  }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  html, body { background: #F1E6D2; }
+  body { font-family: 'Inter', system-ui, sans-serif; color: #1B1815; }
+  .font-display { font-family: 'Inter', system-ui, sans-serif; font-optical-sizing: auto; }
+  .font-mono, .tabular-nums { font-family: 'JetBrains Mono', ui-monospace, monospace; font-feature-settings: "tnum"; }
+  .smallcaps { font-feature-settings: "smcp", "c2sc"; letter-spacing: 0.18em; text-transform: uppercase; }
+
+  /* Paper texture: faint horizontal threadlines + warm vignette */
+  .paper-grain {
+    background-color: #F1E6D2;
+    background-image:
+      radial-gradient(1200px 700px at 80% -10%, rgba(130,32,38,0.05), transparent 60%),
+      radial-gradient(900px 600px at -10% 110%, rgba(24,86,96,0.05), transparent 60%),
+      repeating-linear-gradient(0deg, rgba(59,52,43,0.03) 0 1px, transparent 1px 3px),
+      repeating-linear-gradient(90deg, rgba(59,52,43,0.018) 0 1px, transparent 1px 7px);
+  }
+  .paper-rule {
+    background-image: repeating-linear-gradient(0deg, transparent 0 27px, rgba(59,52,43,0.06) 27px 28px);
+  }
+  .double-rule { box-shadow: inset 0 1px 0 #1B1815, inset 0 4px 0 #F1E6D2, inset 0 5px 0 #1B1815; }
+  .double-rule-b { box-shadow: inset 0 -1px 0 #1B1815, inset 0 -4px 0 #F1E6D2, inset 0 -5px 0 #1B1815; }
+  .hairline-b { box-shadow: inset 0 -1px 0 rgba(27,24,21,0.85); }
+  .hairline-t { box-shadow: inset 0 1px 0 rgba(27,24,21,0.85); }
+
+  .masthead {
+    font-family: 'Inter', system-ui, sans-serif;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  /* Subtle blink for "live wire" pulse */
+  @keyframes inkpulse { 0%,100% { opacity: 1 } 50% { opacity: 0.35 } }
+  .inkpulse { animation: inkpulse 2.4s ease-in-out infinite; }
+
+  /* Hover treatment for list rows */
+  .row-hover { transition: background-color 180ms ease, box-shadow 180ms ease, transform 180ms ease; }
+
+  /* Pretty wraps */
+  h1, h2, h3, p { text-wrap: pretty; }
+
+  /* Custom scrollbar to match paper */
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #C0AE8E; border-radius: 0; }
+  ::-webkit-scrollbar-thumb:hover { background: #9A8D77; }
+
+  /* Ornaments */
+  .fleuron::before { content: "❦"; color: #822026; padding: 0 .5ch; }
+
+  /* Marker */
+  .marker {
+    background: linear-gradient(180deg, transparent 60%, rgba(164,115,36,0.35) 60% 92%, transparent 92%);
+  }
+
+  /* Stamp box */
+  .stamp {
+    border: 1.5px solid #822026;
+    color: #822026;
+    transform: rotate(-2deg);
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+  }
+</style>
+
+<!-- Pinned, integrity-checked React + Babel -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<!-- lucide-react via UMD -->
+<script src="https://unpkg.com/lucide@0.453.0/dist/umd/lucide.js"></script>
+</head>
+<body class="paper-grain">
+<div id="root"></div>
+
+<!-- ===================== DATA ===================== -->
+<script>
+// =========================================================================
+// MOCK DATA — 30 VIPs
+// =========================================================================
+window.VIPS = [
+  { id: 'V001', name: 'Dragon Capital HK',        region: 'HK',  aum: 4200000,  vol30d: 38000000,  avgTrade: 85000,  makerRatio: 0.78, products: 5, leverage: 18, depositTrend: 12,  apiUser: true,  activeDays: 28, pairs: 47, withdrawFreq: 'low',  referrals: 4,  recencyDays: 1,  competitorTier: 'MEXC VIP4' },
+  { id: 'V002', name: 'Aleksei Volkov',            region: 'RU',  aum: 1850000,  vol30d: 12400000,  avgTrade: 22000,  makerRatio: 0.42, products: 3, leverage: 32, depositTrend: 8,   apiUser: true,  activeDays: 26, pairs: 31, withdrawFreq: 'mid',  referrals: 1,  recencyDays: 1,  competitorTier: null },
+  { id: 'V003', name: 'Nguyen Trading Co.',        region: 'VN',  aum: 680000,   vol30d: 4200000,   avgTrade: 8500,   makerRatio: 0.21, products: 2, leverage: 45, depositTrend: 35,  apiUser: false, activeDays: 22, pairs: 18, withdrawFreq: 'high', referrals: 0,  recencyDays: 2,  competitorTier: 'MEXC VIP2' },
+  { id: 'V004', name: 'Chen Wei Lin',              region: 'TW',  aum: 2100000,  vol30d: 850000,    avgTrade: 12000,  makerRatio: 0.55, products: 1, leverage: 8,  depositTrend: -5,  apiUser: false, activeDays: 6,  pairs: 4,  withdrawFreq: 'low',  referrals: 0,  recencyDays: 8,  competitorTier: null },
+  { id: 'V005', name: 'Park Seoul Quant',          region: 'KR',  aum: 5800000,  vol30d: 67000000,  avgTrade: 145000, makerRatio: 0.84, products: 4, leverage: 12, depositTrend: 22,  apiUser: true,  activeDays: 30, pairs: 62, withdrawFreq: 'low',  referrals: 7,  recencyDays: 1,  competitorTier: 'MEXC VIP5' },
+  { id: 'V006', name: 'Mehmet Erdogan',            region: 'TR',  aum: 320000,   vol30d: 5800000,   avgTrade: 4200,   makerRatio: 0.18, products: 2, leverage: 78, depositTrend: 45,  apiUser: false, activeDays: 28, pairs: 24, withdrawFreq: 'mid',  referrals: 2,  recencyDays: 1,  competitorTier: null },
+  { id: 'V007', name: 'Sarawut Limthongkul',       region: 'TH',  aum: 920000,   vol30d: 3100000,   avgTrade: 6800,   makerRatio: 0.32, products: 2, leverage: 25, depositTrend: 4,   apiUser: false, activeDays: 18, pairs: 12, withdrawFreq: 'mid',  referrals: 0,  recencyDays: 3,  competitorTier: null },
+  { id: 'V008', name: 'Mumbai DeFi Holdings',      region: 'IN',  aum: 1400000,  vol30d: 8900000,   avgTrade: 18000,  makerRatio: 0.61, products: 4, leverage: 15, depositTrend: 18,  apiUser: true,  activeDays: 25, pairs: 28, withdrawFreq: 'low',  referrals: 3,  recencyDays: 2,  competitorTier: 'MEXC VIP3' },
+  { id: 'V009', name: 'Ivan Petrov',               region: 'RU',  aum: 240000,   vol30d: 18500000,  avgTrade: 3200,   makerRatio: 0.08, products: 1, leverage: 95, depositTrend: 60,  apiUser: false, activeDays: 30, pairs: 8,  withdrawFreq: 'high', referrals: 0,  recencyDays: 1,  competitorTier: null },
+  { id: 'V010', name: 'Sofia Lopez',               region: 'MX',  aum: 480000,   vol30d: 1200000,   avgTrade: 5400,   makerRatio: 0.48, products: 3, leverage: 10, depositTrend: -18, apiUser: false, activeDays: 9,  pairs: 11, withdrawFreq: 'high', referrals: 0,  recencyDays: 12, competitorTier: null },
+  { id: 'V011', name: 'Yusuf Brothers UAE',        region: 'AE',  aum: 7200000,  vol30d: 28000000,  avgTrade: 92000,  makerRatio: 0.71, products: 5, leverage: 14, depositTrend: 6,   apiUser: true,  activeDays: 27, pairs: 38, withdrawFreq: 'low',  referrals: 5,  recencyDays: 1,  competitorTier: 'MEXC VIP4' },
+  { id: 'V012', name: 'Tanaka Hiroshi',            region: 'JP',  aum: 1100000,  vol30d: 480000,    avgTrade: 8200,   makerRatio: 0.62, products: 2, leverage: 5,  depositTrend: 2,   apiUser: false, activeDays: 8,  pairs: 6,  withdrawFreq: 'low',  referrals: 0,  recencyDays: 5,  competitorTier: null },
+  { id: 'V013', name: 'Lagos Crypto Group',        region: 'NG',  aum: 180000,   vol30d: 2400000,   avgTrade: 1800,   makerRatio: 0.15, products: 2, leverage: 65, depositTrend: 28,  apiUser: false, activeDays: 24, pairs: 16, withdrawFreq: 'mid',  referrals: 1,  recencyDays: 2,  competitorTier: null },
+  { id: 'V014', name: 'Wang Jun Trading',          region: 'SG',  aum: 3600000,  vol30d: 22000000,  avgTrade: 58000,  makerRatio: 0.69, products: 4, leverage: 16, depositTrend: 15,  apiUser: true,  activeDays: 26, pairs: 35, withdrawFreq: 'low',  referrals: 2,  recencyDays: 1,  competitorTier: 'MEXC VIP3' },
+  { id: 'V015', name: 'Marcus Johansson',          region: 'SE',  aum: 850000,   vol30d: 6200000,   avgTrade: 14000,  makerRatio: 0.58, products: 3, leverage: 20, depositTrend: 11,  apiUser: true,  activeDays: 23, pairs: 22, withdrawFreq: 'mid',  referrals: 1,  recencyDays: 2,  competitorTier: null },
+  { id: 'V016', name: 'Phoenix Funds (BVI)',       region: 'BVI', aum: 12000000, vol30d: 42000000,  avgTrade: 220000, makerRatio: 0.81, products: 5, leverage: 8,  depositTrend: 4,   apiUser: true,  activeDays: 29, pairs: 28, withdrawFreq: 'low',  referrals: 3,  recencyDays: 1,  competitorTier: 'MEXC VIP6' },
+  { id: 'V017', name: 'Rashid Al-Maktoum',         region: 'AE',  aum: 2400000,  vol30d: 320000,    avgTrade: 18000,  makerRatio: 0.44, products: 1, leverage: 4,  depositTrend: -2,  apiUser: false, activeDays: 4,  pairs: 3,  withdrawFreq: 'low',  referrals: 0,  recencyDays: 14, competitorTier: null },
+  { id: 'V018', name: 'KOL_DegenApe',              region: 'US',  aum: 380000,   vol30d: 14000000,  avgTrade: 6500,   makerRatio: 0.22, products: 3, leverage: 55, depositTrend: 38,  apiUser: false, activeDays: 29, pairs: 41, withdrawFreq: 'mid',  referrals: 12, recencyDays: 1,  competitorTier: null },
+  { id: 'V019', name: 'Hanoi Trading Desk',        region: 'VN',  aum: 1650000,  vol30d: 9400000,   avgTrade: 24000,  makerRatio: 0.51, products: 4, leverage: 22, depositTrend: 19,  apiUser: true,  activeDays: 26, pairs: 26, withdrawFreq: 'mid',  referrals: 2,  recencyDays: 1,  competitorTier: 'MEXC VIP3' },
+  { id: 'V020', name: 'Carlos Mendes',             region: 'BR',  aum: 540000,   vol30d: 720000,    avgTrade: 4800,   makerRatio: 0.39, products: 2, leverage: 12, depositTrend: -25, apiUser: false, activeDays: 7,  pairs: 9,  withdrawFreq: 'high', referrals: 0,  recencyDays: 18, competitorTier: null },
+  { id: 'V021', name: 'Priya Capital Mumbai',      region: 'IN',  aum: 2900000,  vol30d: 16000000,  avgTrade: 42000,  makerRatio: 0.66, products: 5, leverage: 14, depositTrend: 24,  apiUser: true,  activeDays: 28, pairs: 33, withdrawFreq: 'low',  referrals: 4,  recencyDays: 1,  competitorTier: 'MEXC VIP4' },
+  { id: 'V022', name: 'Borys Shevchenko',          region: 'UA',  aum: 95000,    vol30d: 8400000,   avgTrade: 1200,   makerRatio: 0.06, products: 1, leverage: 100,depositTrend: 88,  apiUser: false, activeDays: 30, pairs: 14, withdrawFreq: 'high', referrals: 0,  recencyDays: 1,  competitorTier: null },
+  { id: 'V023', name: 'Bangkok BTC Group',         region: 'TH',  aum: 1280000,  vol30d: 7100000,   avgTrade: 19000,  makerRatio: 0.54, products: 3, leverage: 18, depositTrend: 9,   apiUser: false, activeDays: 24, pairs: 21, withdrawFreq: 'low',  referrals: 1,  recencyDays: 2,  competitorTier: null },
+  { id: 'V024', name: 'Olivia Kensington',         region: 'GB',  aum: 6400000,  vol30d: 880000,    avgTrade: 35000,  makerRatio: 0.51, products: 2, leverage: 6,  depositTrend: 1,   apiUser: false, activeDays: 11, pairs: 8,  withdrawFreq: 'low',  referrals: 0,  recencyDays: 4,  competitorTier: null },
+  { id: 'V025', name: 'Manila Quant Lab',          region: 'PH',  aum: 720000,   vol30d: 11200000,  avgTrade: 16000,  makerRatio: 0.74, products: 4, leverage: 12, depositTrend: 14,  apiUser: true,  activeDays: 28, pairs: 29, withdrawFreq: 'mid',  referrals: 2,  recencyDays: 1,  competitorTier: 'MEXC VIP2' },
+  { id: 'V026', name: 'Lin Mei Hua',               region: 'CN',  aum: 3100000,  vol30d: 5600000,   avgTrade: 28000,  makerRatio: 0.48, products: 3, leverage: 15, depositTrend: -8,  apiUser: false, activeDays: 16, pairs: 17, withdrawFreq: 'mid',  referrals: 1,  recencyDays: 6,  competitorTier: null },
+  { id: 'V027', name: 'KOL_AltcoinHunter',         region: 'GB',  aum: 290000,   vol30d: 9800000,   avgTrade: 4100,   makerRatio: 0.18, products: 3, leverage: 48, depositTrend: 32,  apiUser: false, activeDays: 27, pairs: 38, withdrawFreq: 'mid',  referrals: 18, recencyDays: 1,  competitorTier: null },
+  { id: 'V028', name: 'Dubai Whale 0x9f',          region: 'AE',  aum: 18500000, vol30d: 6400000,   avgTrade: 280000, makerRatio: 0.42, products: 2, leverage: 5,  depositTrend: 0,   apiUser: false, activeDays: 9,  pairs: 6,  withdrawFreq: 'low',  referrals: 0,  recencyDays: 3,  competitorTier: null },
+  { id: 'V029', name: 'Tokyo Algo Partners',       region: 'JP',  aum: 4800000,  vol30d: 51000000,  avgTrade: 95000,  makerRatio: 0.86, products: 4, leverage: 10, depositTrend: 8,   apiUser: true,  activeDays: 30, pairs: 44, withdrawFreq: 'low',  referrals: 3,  recencyDays: 1,  competitorTier: 'MEXC VIP5' },
+  { id: 'V030', name: 'Diego Ramirez',             region: 'AR',  aum: 410000,   vol30d: 2800000,   avgTrade: 5200,   makerRatio: 0.34, products: 2, leverage: 28, depositTrend: 16,  apiUser: false, activeDays: 22, pairs: 19, withdrawFreq: 'mid',  referrals: 1,  recencyDays: 2,  competitorTier: null },
+];
+
+window.TRIGGERS = {
+  C1: { id: 'C1', name: 'Churn Risk',       group: 'Inactivity Risk',     color: 'oxblood',   desc: 'High-value account going dormant or withdrawing — intervene now' },
+  C2: { id: 'C2', name: 'Whale Sleeping',   group: 'Inactivity Risk',     color: 'gold',      desc: 'Large balance with very few active days — wake them up' },
+  C3: { id: 'C3', name: 'Hot Upgrade',      group: 'Increasing Activity', color: 'plum',      desc: 'Significant capital, low turnover — capacity unused' },
+  C4: { id: 'C4', name: 'Rising Star',      group: 'Increasing Activity', color: 'olive',     desc: 'Net deposits climbing fast, frequent activity — fast-track' },
+  C5: { id: 'C5', name: 'Cross-Sell Ready', group: 'Increasing Activity', color: 'teal',      desc: 'Single-product user with capital — expand product mix' },
+  C6: { id: 'C6', name: 'API Convert',      group: 'Increasing Activity', color: 'aubergine', desc: 'Multi-product API trader — high stickiness, retain' },
+};
+
+window.GROUPS = {
+  'Inactivity Risk':     { color: 'oxblood', desc: 'Accounts requiring re-engagement intervention' },
+  'Increasing Activity': { color: 'olive',   desc: 'Accounts with capacity to grow — push opportunities' },
+  'Steady':              { color: 'ink',     desc: 'Healthy baseline — light-touch maintenance' },
+};
+
+const percentile = (val, arr) => {
+  const sorted = [...arr].sort((a, b) => a - b);
+  const idx = sorted.findIndex(v => v >= val);
+  return idx === -1 ? 100 : (idx / sorted.length) * 100;
+};
+
+window.computeScores = (vips) => {
+  const aums = vips.map(v => v.aum);
+  const vols = vips.map(v => v.vol30d);
+
+  return vips.map(v => {
+    const aumPct = percentile(v.aum, aums);
+    const volPct = percentile(v.vol30d, vols);
+    const turnover = v.vol30d / v.aum;
+    const breadthScore = Math.min(100, (v.products / 5) * 100);
+    const breadthTurnover = breadthScore * Math.min(1, turnover / 20);
+    const makerScore = v.makerRatio * 100;
+    const activeScore = (v.activeDays / 30) * 100;
+    const depositScore = Math.max(0, Math.min(100, 50 + v.depositTrend));
+    const referralScore = Math.min(100, v.referrals * 8);
+
+    const coreScore =
+      0.46 * aumPct +
+      0.31 * volPct +
+      0.23 * breadthTurnover;
+
+    const peripheralScore =
+      0.40 * referralScore +
+      0.40 * activeScore +
+      0.20 * depositScore;
+
+    const isHighValue    = v.aum > 1500000 || v.vol30d > 15000000;
+    const isChurnRisk    = v.recencyDays > 7 || v.depositTrend < -10;
+    const isUnderutilized = turnover < 5 && v.aum > 1000000;
+    const isRisingStar   = v.depositTrend > 20 && v.activeDays > 20 && v.aum < 1500000;
+    const isWhaleSleep   = v.aum > 1000000 && v.activeDays < 10;
+    const isApiNew       = v.apiUser && v.products >= 3;
+    const isCrossSell    = v.products <= 2 && v.aum > 200000;
+
+    const triggers = [];
+    if (isChurnRisk && isHighValue) triggers.push('C1');
+    if (isWhaleSleep)               triggers.push('C2');
+    if (isUnderutilized)            triggers.push('C3');
+    if (isRisingStar)               triggers.push('C4');
+    if (isCrossSell)                triggers.push('C5');
+    if (isApiNew)                   triggers.push('C6');
+
+    const inactivityTriggers = triggers.filter(t => ['C1','C2'].includes(t));
+    const activityTriggers   = triggers.filter(t => ['C3','C4','C5','C6'].includes(t));
+    const inInactivity = inactivityTriggers.length > 0;
+    const inActivity   = activityTriggers.length > 0;
+    const isSteady     = !inInactivity && !inActivity;
+
+    let group;
+    if (isSteady) group = 'Steady';
+    else if (inInactivity && inActivity) group = 'Both';
+    else if (inInactivity) group = 'Inactivity Risk';
+    else group = 'Increasing Activity';
+
+    const seedDays = (() => {
+      const base = v.recencyDays + (v.activeDays > 25 ? 1 : v.activeDays > 15 ? 4 : 9);
+      const adj  = v.aum > 5000000 ? -2 : v.aum > 1500000 ? 0 : 2;
+      return Math.max(1, base + adj);
+    })();
+    const lastContactDays = seedDays;
+
+    const channelByRegion = {
+      CN: 'WeChat', HK: 'WeChat', TW: 'WeChat',
+      RU: 'Telegram', UA: 'Telegram', TR: 'Telegram', VN: 'Telegram', TH: 'Telegram',
+      KR: 'Telegram', PH: 'Telegram', IN: 'Telegram', NG: 'Telegram',
+      AE: 'Phone',   BVI: 'Phone',   GB: 'Email',
+      JP: 'Email',   SE: 'Email',    SG: 'Telegram',
+      MX: 'Email',   BR: 'Email',    AR: 'Email',
+      US: 'Email',
+    };
+    let lastContactMode = channelByRegion[v.region] || 'Email';
+    if (v.aum > 8000000) lastContactMode = 'Phone';
+    if (lastContactDays > 21) lastContactMode = 'None';
+
+    return {
+      ...v,
+      score: Math.round(coreScore),
+      peripheralScore: Math.round(peripheralScore),
+      turnover,
+      group,
+      triggers,
+      inactivityTriggers,
+      activityTriggers,
+      lastContactDays,
+      lastContactMode,
+      coreBreakdown: {
+        aum:     Math.round(0.46 * aumPct),
+        vol:     Math.round(0.31 * volPct),
+        breadth: Math.round(0.23 * breadthTurnover),
+      },
+      rawScores: { aumPct, volPct, breadthTurnover, makerScore, activeScore, depositScore, referralScore, turnover },
+      peripheralBreakdown: {
+        referral: Math.round(0.40 * referralScore),
+        active:   Math.round(0.40 * activeScore),
+        deposit:  Math.round(0.20 * depositScore),
+      },
+    };
+  });
+};
+</script>
+
+<!-- ===================== ICONS ===================== -->
+<script type="text/babel" data-presets="env,react">
+const _ICON = (paths) => function Icon(props) {
+  const { className = '', size, strokeWidth = 1.75, ...rest } = props || {};
+  const dim = size != null ? size : undefined;
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round"
+      width={dim} height={dim} className={className} {...rest}>
+      {paths}
+    </svg>
+  );
+};
+
+window.Search       = _ICON(<><circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /></>);
+window.TrendingUp   = _ICON(<><polyline points="22 7 13.5 15.5 8.5 10.5 2 17" /><polyline points="16 7 22 7 22 13" /></>);
+window.TrendingDown = _ICON(<><polyline points="22 17 13.5 8.5 8.5 13.5 2 7" /><polyline points="16 17 22 17 22 11" /></>);
+window.AlertTriangle= _ICON(<><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" /><path d="M12 9v4" /><path d="M12 17h.01" /></>);
+window.Sparkles     = _ICON(<><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" /><path d="M20 3v4" /><path d="M22 5h-4" /><path d="M4 17v2" /><path d="M5 18H3" /></>);
+window.Activity     = _ICON(<><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.5.5 0 0 1-.96 0L9.24 2.18a.5.5 0 0 0-.96 0l-2.35 8.36A2 2 0 0 1 4 12H2" /></>);
+window.X            = _ICON(<><path d="M18 6 6 18" /><path d="m6 6 12 12" /></>);
+window.Copy         = _ICON(<><rect width="14" height="14" x="8" y="8" rx="2" ry="2" /><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" /></>);
+window.Check        = _ICON(<polyline points="20 6 9 17 4 12" />);
+window.ArrowUpRight = _ICON(<><path d="M7 7h10v10" /><path d="M7 17 17 7" /></>);
+</script>
+
+<!-- ===================== COMPONENTS ===================== -->
+<script type="text/babel" data-presets="env,react">
+const { useState, useMemo, useEffect, useRef } = React;
+
+const PAL = {
+  oxblood:   '#822026', oxbloodD:  '#5B161B',
+  gold:      '#A47324', goldD:     '#7A540F',
+  teal:      '#185660', olive:     '#5B5A1F',
+  plum:      '#6E2A4E', aubergine: '#4A2A5A',
+  ink:       '#1B1815', ink2:      '#3B342B',
+  ink3:      '#6F6555', ink4:      '#9A8D77',
+  rule:      '#1B1815', rule2:     '#C0AE8E',
+  paper:     '#F1E6D2', paper2:    '#E9DBC1', paper3: '#DCCBAB',
+};
+
+const colorHex = {
+  oxblood: PAL.oxblood, gold: PAL.gold, teal: PAL.teal,
+  olive: PAL.olive, plum: PAL.plum, aubergine: PAL.aubergine,
+  ink: PAL.ink2, ink3: PAL.ink3,
+};
+
+const chipFor = (key) => {
+  switch (key) {
+    case 'oxblood':   return { fg: 'text-[#5B161B]', bg: 'bg-[#822026]/10',  bd: 'border-[#822026]/55' };
+    case 'gold':      return { fg: 'text-[#7A540F]', bg: 'bg-[#A47324]/12',  bd: 'border-[#A47324]/60' };
+    case 'teal':      return { fg: 'text-[#0F3B43]', bg: 'bg-[#185660]/10',  bd: 'border-[#185660]/55' };
+    case 'olive':     return { fg: 'text-[#3D3C12]', bg: 'bg-[#5B5A1F]/12',  bd: 'border-[#5B5A1F]/55' };
+    case 'plum':      return { fg: 'text-[#3F1A2D]', bg: 'bg-[#6E2A4E]/12',  bd: 'border-[#6E2A4E]/55' };
+    case 'aubergine': return { fg: 'text-[#2B1936]', bg: 'bg-[#4A2A5A]/12',  bd: 'border-[#4A2A5A]/55' };
+    case 'ink':       return { fg: 'text-[#1B1815]', bg: 'bg-[#1B1815]/06',  bd: 'border-[#1B1815]/40' };
+    default:          return { fg: 'text-[#1B1815]', bg: 'bg-[#1B1815]/06',  bd: 'border-[#1B1815]/30' };
+  }
+};
+
+const fmtUSD = (n) => {
+  if (n >= 1000000) return `$${(n / 1000000).toFixed(2)}M`;
+  if (n >= 1000)    return `$${(n / 1000).toFixed(0)}K`;
+  return `$${n}`;
+};
+
+const fmtDate = (d) => {
+  const months = ['JANUARY','FEBRUARY','MARCH','APRIL','MAY','JUNE','JULY','AUGUST','SEPTEMBER','OCTOBER','NOVEMBER','DECEMBER'];
+  const days   = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
+  return `${days[d.getDay()]}, ${months[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`;
+};
+
+// ---- MASTHEAD ----
+const Masthead = ({ totalAUM, totalVol, upgradeTargets, scoredCount }) => {
+  const today = useMemo(() => new Date(2026, 4, 10), []);
+  return (
+    <header className="border-b-[2px] border-ink">
+      <div className="hairline-b text-[10px] sm:text-[11px] font-mono text-ink2">
+        <div className="max-w-[1480px] mx-auto px-6 py-1.5 flex items-center justify-between">
+          <span className="smallcaps">{fmtDate(today)}</span>
+          <span className="inline-flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#185660] inkpulse"></span>
+            <span className="smallcaps">Live · synced 2s ago</span>
+          </span>
+        </div>
+      </div>
+
+      <div className="max-w-[1480px] mx-auto px-6 py-5">
+        <div className="grid grid-cols-12 items-end gap-6">
+          <div className="col-span-3 flex items-center gap-3">
+            <div className="w-12 h-12 border-[1.5px] border-ink flex items-center justify-center font-display font-bold text-2xl text-ink leading-none">
+              <span className="-mt-0.5">M</span>
+            </div>
+            <div className="leading-tight">
+              <div className="font-mono text-[11px] smallcaps text-ink">MEXC VIP Desk</div>
+              <div className="font-mono text-[10px] text-ink3 mt-0.5">Relationship Manager Console</div>
+            </div>
+          </div>
+
+          <div className="col-span-6 text-center">
+            <h1 className="masthead text-[64px] sm:text-[78px] leading-[0.9] tracking-tight text-ink">
+              VIP Desk
+            </h1>
+            <div className="font-mono text-[10px] smallcaps text-ink3 mt-2">Account potential · trigger detection · outreach</div>
+          </div>
+
+          <div className="col-span-3 border-l-[1.5px] border-ink2 pl-4">
+            <div className="font-mono text-[9px] smallcaps text-ink3 mb-1">Book · at close</div>
+            <div className="space-y-1">
+              <MRow label="Aggregate AUM"   val={fmtUSD(totalAUM)} />
+              <MRow label="30-d turnover"   val={fmtUSD(totalVol)} accent="text-[#185660]" />
+              <MRow label="Names under cover" val={String(scoredCount).padStart(2,'0')} />
+              <MRow label="Upgrade targets" val={String(upgradeTargets).padStart(2,'0')} accent="text-[#822026]" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="double-rule-b">
+        <div className="max-w-[1480px] mx-auto px-6 py-2 flex items-center justify-between text-[10px] font-mono">
+          <div className="smallcaps text-ink2">{scoredCount} accounts under cover · 6 trigger types</div>
+          <div className="smallcaps text-ink3">M. Kee · RM</div>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+const MRow = ({ label, val, accent = '' }) => (
+  <div className="flex items-baseline justify-between gap-3 text-[11px] font-mono">
+    <span className="smallcaps text-ink3">{label}</span>
+    <span className={`tabular-nums font-semibold text-ink ${accent}`}>{val}</span>
+  </div>
+);
+
+// ---- BADGES ----
+const GroupBadge = ({ group, size = 'sm' }) => {
+  const config = {
+    'Inactivity Risk':     { color: 'oxblood', icon: window.TrendingDown,  label: 'Inactivity Risk',  glyph: '↓' },
+    'Increasing Activity': { color: 'olive',   icon: window.TrendingUp,    label: 'Rising',           glyph: '↑' },
+    'Both':                { color: 'gold',    icon: window.AlertTriangle, label: 'Cross-Pressure',   glyph: '⚠' },
+    'Steady':              { color: 'ink',     icon: window.Activity,      label: 'Steady Hand',      glyph: '—' },
+  }[group] || { color: 'ink', icon: window.Activity, label: group, glyph: '·' };
+  const c  = chipFor(config.color);
+  const sz = size === 'sm' ? 'px-1.5 py-[2px] text-[9px]' : 'px-2 py-0.5 text-[10px]';
+  return (
+    <span className={`inline-flex items-center gap-1 border ${c.bd} ${c.bg} ${c.fg} font-mono smallcaps ${sz}`}>
+      <span className="text-[9px] leading-none">{config.glyph}</span>
+      {config.label}
+    </span>
+  );
+};
+
+const TriggerPill = ({ id, size = 'sm' }) => {
+  const t = window.TRIGGERS[id];
+  if (!t) return null;
+  const c  = chipFor(t.color);
+  const sz = size === 'sm' ? 'px-1.5 py-[2px] text-[9px]' : 'px-2 py-0.5 text-[10px]';
+  return (
+    <span className={`inline-flex items-center gap-1 border ${c.bd} ${c.bg} ${c.fg} font-mono smallcaps ${sz}`}
+      title={`${t.id} ${t.name} — ${t.desc}`}>
+      <span className="font-bold">{t.id}</span>
+    </span>
+  );
+};
+
+// ---- LAST CONTACT ----
+const LastContact = ({ days, mode, size = 'sm' }) => {
+  const stale   = days > 14;
+  const overdue = days > 7 && days <= 14;
+  const noneSent = mode === 'None';
+  const colorClass = noneSent || stale ? 'text-[#822026]' : overdue ? 'text-[#A47324]' : 'text-ink3';
+  const modeIcon = { Telegram: '✈', Email: '✉', WeChat: '微', Phone: '☎', None: '—' }[mode] || '·';
+  const ts = noneSent ? 'Never contacted' : `${mode} · ${days}d ago`;
+  const sz = size === 'sm' ? 'text-[10px]' : 'text-[11px]';
+  return (
+    <span className={`inline-flex items-center gap-1.5 font-mono smallcaps ${colorClass} ${sz}`}>
+      <span className="opacity-80 not-italic">{modeIcon}</span>
+      <span>{ts}</span>
+    </span>
+  );
+};
+
+// ---- RFM SCATTER ----
+const RFMScatter = ({ vips, onSelect, selectedId }) => {
+  const maxVol     = Math.max(...vips.map(v => v.vol30d));
+  const maxRecency = 20;
+  const plotRef    = useRef(null);
+  const [size, setSize] = useState({ w: 600, h: 280 });
+
+  useEffect(() => {
+    if (!plotRef.current) return;
+    const measure = () => {
+      const r = plotRef.current.getBoundingClientRect();
+      if (r.width && r.height) setSize({ w: r.width, h: r.height });
+    };
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(plotRef.current);
+    return () => ro.disconnect();
+  }, []);
+
+  const positioned = useMemo(() => {
+    const W = Math.max(40, size.w);
+    const H = Math.max(40, size.h);
+    const items = vips.map(v => {
+      const x0 = ((maxRecency - Math.min(v.recencyDays, maxRecency)) / maxRecency) * W;
+      const y0 = H - (Math.log10(v.vol30d + 1) / Math.log10(maxVol + 1)) * H;
+      const r  = (5 + (v.activeDays / 30) * 16) / 2;
+      return { v, x: x0, y: y0, ax: x0, ay: y0, r };
+    });
+    const GAP = 1.5;
+    const clamp = (it) => {
+      it.x = Math.max(it.r, Math.min(W - it.r, it.x));
+      it.y = Math.max(it.r, Math.min(H - it.r, it.y));
+    };
+    for (let i = 0; i < items.length; i++)
+      for (let j = i + 1; j < items.length; j++)
+        if (items[i].x === items[j].x && items[i].y === items[j].y) {
+          items[j].x += (Math.random() - 0.5) * 2;
+          items[j].y += (Math.random() - 0.5) * 2;
+        }
+    for (let iter = 0; iter < 400; iter++) {
+      let moved = 0;
+      for (let i = 0; i < items.length; i++) {
+        for (let j = i + 1; j < items.length; j++) {
+          const a = items[i], b = items[j];
+          const dx = b.x - a.x, dy = b.y - a.y;
+          let d = Math.hypot(dx, dy);
+          const minD = a.r + b.r + GAP;
+          if (d < minD) {
+            if (d < 0.0001) {
+              const ang = Math.random() * Math.PI * 2;
+              a.x -= Math.cos(ang) * minD * 0.5; a.y -= Math.sin(ang) * minD * 0.5;
+              b.x += Math.cos(ang) * minD * 0.5; b.y += Math.sin(ang) * minD * 0.5;
+            } else {
+              const push = (minD - d) / 2;
+              const ux = dx / d, uy = dy / d;
+              a.x -= ux * push; a.y -= uy * push;
+              b.x += ux * push; b.y += uy * push;
+            }
+            moved += (minD - d);
+          }
+        }
+      }
+      for (const it of items) clamp(it);
+      if (moved < 0.05) break;
+    }
+    return items.map(it => ({
+      v: it.v,
+      x: Math.max(it.r, Math.min(W - it.r, it.x)),
+      y: Math.max(it.r, Math.min(H - it.r, it.y)),
+      r: it.r,
+    }));
+  }, [vips, size.w, size.h, maxVol]);
+
+  return (
+    <div className="relative h-[380px] bg-paper2/60 border border-ink/80">
+      <div className="absolute top-0 left-0 right-0 hairline-b px-3 py-1.5 flex items-center justify-between bg-paper z-10">
+        <div className="font-display font-medium text-[13px] text-ink leading-none">
+          Recency × Monetary, with Frequency by Mark Size
+        </div>
+        <div className="font-mono text-[9px] smallcaps text-ink3">n = {vips.length} · log-scale Y</div>
+      </div>
+
+      <div className="absolute left-0 top-9 bottom-9 w-7 flex items-center justify-center pointer-events-none">
+        <div className="-rotate-90 whitespace-nowrap font-mono text-[9px] smallcaps text-ink3">
+          ← thin · 30-day volume (log) · thick →
+        </div>
+      </div>
+
+      <div ref={plotRef} className="absolute left-7 right-3 top-9 bottom-9 border-l border-b border-ink">
+        {[20,40,60,80].map(p => (
+          <div key={`h${p}`} className="absolute left-0 right-0 border-t border-ink/15" style={{ top: `${100-p}%` }} />
+        ))}
+        {[20,40,60,80].map(p => (
+          <div key={`v${p}`} className="absolute top-0 bottom-0 border-l border-ink/15" style={{ left: `${p}%` }} />
+        ))}
+        <div className="absolute left-0 right-0 border-t border-dashed border-ink/45" style={{ top: '50%' }} />
+        <div className="absolute top-0 bottom-0 border-l border-dashed border-ink/45" style={{ left: '50%' }} />
+        <div className="absolute top-1.5 right-2 text-[10px] font-mono smallcaps text-ink2">High value · Active</div>
+        <div className="absolute top-1.5 left-2 text-[10px] font-mono smallcaps text-[#7A540F]">High value · Sleeping</div>
+        <div className="absolute bottom-1.5 right-2 text-[10px] font-mono smallcaps text-ink3">Low value · Active</div>
+        <div className="absolute bottom-1.5 left-2 text-[10px] font-mono smallcaps text-ink3">Dormant</div>
+
+        {positioned.map(({ v, x, y, r }) => {
+          const isSelected = v.id === selectedId;
+          const dotColorKey =
+            v.group === 'Both'               ? 'gold'    :
+            v.group === 'Inactivity Risk'    ? 'oxblood' :
+            v.group === 'Increasing Activity'? 'olive'   : 'ink3';
+          const dotColor = colorHex[dotColorKey];
+          const d = r * 2;
+          return (
+            <button key={v.id} onClick={() => onSelect(v.id)}
+              className="absolute transition-transform hover:scale-[1.4] hover:z-10"
+              style={{ left: `${x-r}px`, top: `${y-r}px`, width: `${d}px`, height: `${d}px` }}
+              title={`${v.name} · ${v.group}${v.triggers.length ? ' · ' + v.triggers.join(', ') : ''}`}>
+              <span className="block rounded-full" style={{
+                width: '100%', height: '100%',
+                background: dotColor,
+                border: isSelected ? `2px solid ${PAL.ink}` : `1px solid ${PAL.ink}`,
+                boxShadow: isSelected ? `0 0 0 3px ${PAL.paper}, 0 0 0 4px ${PAL.ink}` : 'none',
+                opacity: isSelected ? 1 : 0.88,
+              }} />
+            </button>
+          );
+        })}
+      </div>
+
+      <div className="absolute left-7 right-3 bottom-0 hairline-t bg-paper px-3 py-1.5 flex items-center justify-between">
+        <div className="font-mono text-[9px] smallcaps text-ink3">← stale &nbsp;|&nbsp; recency (days since last trade) &nbsp;|&nbsp; recent →</div>
+        <div className="font-mono text-[9px] smallcaps text-ink3">mark ⌀ ∝ active days</div>
+      </div>
+    </div>
+  );
+};
+
+// ---- METRIC PROFILE ----
+const MetricProfile = ({ vip }) => {
+  if (!vip) return null;
+  const metrics = [
+    { key: 'AUM', label: 'Assets under management',  val: fmtUSD(vip.aum),                        pct: Math.min(100, (vip.aum / 10000000) * 100),   tone: 'core' },
+    { key: 'TOR', label: 'Volume-to-AUM turnover',   val: `${vip.turnover.toFixed(1)}×`,           pct: Math.min(100, (vip.turnover / 30) * 100),    tone: 'core' },
+    { key: 'AVG', label: 'Average ticket size',      val: fmtUSD(vip.avgTrade),                    pct: Math.min(100, (vip.avgTrade / 200000) * 100),tone: 'core' },
+    { key: 'MAK', label: 'Maker share of flow',      val: `${(vip.makerRatio*100).toFixed(0)}%`,   pct: vip.makerRatio * 100,                         tone: 'plum' },
+    { key: 'PRD', label: 'Product breadth',          val: `${vip.products} of 5`,                  pct: (vip.products / 5) * 100,                    tone: 'core' },
+    { key: 'DEP', label: '90-d net deposit trend',   val: `${vip.depositTrend > 0 ? '+' : ''}${vip.depositTrend}%`, pct: Math.max(0, Math.min(100, 50 + vip.depositTrend)), tone: vip.depositTrend < 0 ? 'oxblood' : 'olive' },
+    { key: 'API', label: 'API trader',               val: vip.apiUser ? 'Yes' : 'No',              pct: vip.apiUser ? 100 : 0,                       tone: 'aubergine' },
+    { key: 'ACT', label: 'Active days of last 30',   val: `${vip.activeDays}`,                     pct: (vip.activeDays / 30) * 100,                 tone: 'olive' },
+    { key: 'PRS', label: 'Distinct pairs traded',    val: `${vip.pairs}`,                          pct: Math.min(100, (vip.pairs / 60) * 100),       tone: 'teal' },
+    { key: 'WDR', label: 'Withdrawal frequency',     val: vip.withdrawFreq.toUpperCase(),          pct: vip.withdrawFreq === 'low' ? 100 : vip.withdrawFreq === 'mid' ? 50 : 15, tone: vip.withdrawFreq === 'high' ? 'oxblood' : 'core' },
+    { key: 'REF', label: 'Referrals (90 d)',         val: `${vip.referrals}`,                      pct: Math.min(100, vip.referrals * 8),            tone: 'olive' },
+  ];
+  const toneColor = (t) => t === 'core' ? PAL.ink : (colorHex[t] || PAL.ink);
+  return (
+    <div>
+      <div className="grid grid-cols-12 text-[9px] font-mono smallcaps text-ink3 hairline-b py-1">
+        <div className="col-span-1">№</div>
+        <div className="col-span-2">Code</div>
+        <div className="col-span-5">Indicator</div>
+        <div className="col-span-2 text-right">Reading</div>
+        <div className="col-span-2 text-right">Decile</div>
+      </div>
+      {metrics.map((m, i) => (
+        <div key={m.key} className="grid grid-cols-12 items-center py-1.5 hairline-b group">
+          <div className="col-span-1 font-mono text-[10px] tabular-nums text-ink3">{String(i+1).padStart(2,'0')}</div>
+          <div className="col-span-2 font-mono text-[10px] text-ink2">{m.key}</div>
+          <div className="col-span-5 font-display text-[13px] text-ink leading-tight">{m.label}</div>
+          <div className="col-span-2 text-right font-mono text-[12px] tabular-nums font-semibold" style={{ color: toneColor(m.tone) }}>{m.val}</div>
+          <div className="col-span-2 pl-3">
+            <div className="h-[6px] border border-ink/70 relative overflow-hidden">
+              <div className="absolute inset-0 pointer-events-none" style={{
+                backgroundImage: `linear-gradient(90deg, transparent 24%, rgba(27,24,21,.35) 24% 25%, transparent 25%, transparent 49%, rgba(27,24,21,.35) 49% 50%, transparent 50%, transparent 74%, rgba(27,24,21,.35) 74% 75%, transparent 75%)`
+              }} />
+              <div className="h-full" style={{ width: `${m.pct}%`, background: toneColor(m.tone), opacity: 0.9 }} />
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+// ---- SCORE BREAKDOWN ----
+const ScoreBreakdown = ({ vip }) => {
+  if (!vip) return null;
+  const c = vip.coreBreakdown;
+  const p = vip.peripheralBreakdown;
+  const r = vip.rawScores;
+
+  const coreItems = [
+    { label: 'AUM percentile',     weight: 46, val: c.aum,     raw: r.aumPct,          color: PAL.ink,   formula: `${r.aumPct.toFixed(0)} pctile × 0.46` },
+    { label: 'Volume percentile',  weight: 31, val: c.vol,     raw: r.volPct,          color: PAL.teal,  formula: `${r.volPct.toFixed(0)} pctile × 0.31` },
+    { label: 'Breadth × turnover', weight: 23, val: c.breadth, raw: r.breadthTurnover, color: PAL.olive, formula: `${r.breadthTurnover.toFixed(0)} factor × 0.23` },
+  ];
+  const peripheralItems = [
+    { label: 'Referrals booked',   weight: 40, val: p.referral, raw: r.referralScore, color: PAL.oxblood, formula: `${r.referralScore.toFixed(0)} × 0.40` },
+    { label: 'Active days of 30',  weight: 40, val: p.active,   raw: r.activeScore,   color: PAL.gold,    formula: `${r.activeScore.toFixed(0)} × 0.40` },
+    { label: 'Net deposit trend',  weight: 20, val: p.deposit,  raw: r.depositScore,  color: PAL.plum,    formula: `${r.depositScore.toFixed(0)} × 0.20` },
+  ];
+
+  const Block = ({ title, sublabel, items, total, totalLabel }) => (
+    <div>
+      <div className="flex items-end justify-between hairline-b pb-2 mb-3">
+        <div>
+          <div className="font-display font-semibold text-[20px] leading-tight text-ink">{title}</div>
+          <div className="font-mono text-[9px] smallcaps text-ink3 mt-0.5">{sublabel}</div>
+        </div>
+        <div className="text-right">
+          <div className="font-mono text-[9px] smallcaps text-ink3">{totalLabel}</div>
+          <div className="font-display tabular-nums font-bold text-[44px] leading-none text-ink">{total}</div>
+        </div>
+      </div>
+      <div className="space-y-3">
+        {items.map(it => (
+          <div key={it.label}>
+            <div className="flex items-baseline gap-2 text-[11px] mb-1">
+              <span className="w-1.5 h-1.5 rounded-none flex-shrink-0 mt-1.5" style={{ backgroundColor: it.color }} />
+              <span className="font-display text-[14px] text-ink flex-1 leading-tight">{it.label}</span>
+              <span className="font-mono text-[10px] text-ink3 smallcaps">w. {it.weight}%</span>
+              <span className="font-mono tabular-nums w-10 text-right font-semibold text-ink">+{it.val}</span>
+            </div>
+            <div className="ml-3.5 h-[5px] border border-ink/70 overflow-hidden relative">
+              <div className="h-full transition-all duration-700" style={{ width: `${it.raw}%`, backgroundColor: it.color, opacity: 0.85 }} />
+            </div>
+            <div className="ml-3.5 mt-1 font-mono text-[9px] smallcaps text-ink3">{it.formula}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="space-y-6">
+      <Block title="Core Score"       sublabel="Size · Sophistication · sums to 100%" items={coreItems}       total={vip.score}           totalLabel="Core" />
+      <Block title="Peripheral Score" sublabel="Engagement quality · separate composite" items={peripheralItems} total={vip.peripheralScore} totalLabel="Peripheral" />
+      <div className="hairline-t pt-3">
+        <div className="font-mono text-[9px] smallcaps text-ink3 mb-2">Standalone gauge — not in either composite</div>
+        <div className="flex items-center justify-between bg-paper2/70 border border-ink/70 px-3 py-2.5">
+          <div className="flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-none" style={{ backgroundColor: PAL.plum }} />
+            <span className="font-display text-[14px] text-ink">Maker share of flow</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="w-32 h-[5px] border border-ink/70 overflow-hidden">
+              <div className="h-full transition-all" style={{ width: `${vip.makerRatio*100}%`, backgroundColor: PAL.plum, opacity: 0.85 }} />
+            </div>
+            <span className="font-mono tabular-nums font-semibold text-[15px] w-12 text-right" style={{ color: PAL.plum }}>{(vip.makerRatio*100).toFixed(0)}%</span>
+          </div>
+        </div>
+        <div className="font-mono text-[10px] smallcaps text-ink3 mt-1.5">
+          {vip.makerRatio >= 0.7 ? 'Professional / market-maker flow' : vip.makerRatio >= 0.4 ? 'Mixed limit and market activity' : 'Taker-heavy retail flow'}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// =========================================================================
+// 60-DAY ACCOUNT REPORT — structured data for the React renderer
+// =========================================================================
+const buildReport = (vip) => {
+  const turnoverStrength =
+    vip.turnover >= 15 ? 'Strong'   :
+    vip.turnover >= 8  ? 'Healthy'  :
+    vip.turnover >= 3  ? 'Moderate' :
+    'Weak';
+
+  const makerRead =
+    vip.makerRatio >= 0.7 ? 'Professional / market-maker flow' :
+    vip.makerRatio >= 0.4 ? 'Mixed limit and market activity'   :
+    'Taker-heavy retail flow';
+
+  const depositRead =
+    vip.depositTrend >= 25 ? 'Capital migrating in — strong commitment'    :
+    vip.depositTrend >= 5  ? 'Net positive — modest expansion'              :
+    vip.depositTrend > -5  ? 'Flat — neither growing nor shrinking'         :
+    vip.depositTrend > -15 ? 'Net outflow — early withdrawal signal'        :
+    'Significant capital flight — competitor migration risk';
+
+  const engagementRead =
+    vip.activeDays >= 25 ? 'Daily presence — habitual'              :
+    vip.activeDays >= 15 ? 'Steady — regular but not constant'       :
+    vip.activeDays >= 7  ? 'Episodic — opportunistic engagement'     :
+    'Dormant — multi-week silence';
+
+  const productMix =
+    vip.products === 5 ? 'Fully diversified across all 5 product lines' :
+    vip.products >= 4  ? 'Broadly engaged — one product gap to close'   :
+    vip.products >= 3  ? 'Mid-breadth — meaningful cross-sell room'      :
+    vip.products >= 2  ? 'Narrow — clear cross-sell opportunity'         :
+    'Single-product user — significant expansion runway';
+
+  // Recommended action
+  const primary = vip.triggers[0];
+  const action =
+    primary === 'C1' ? 'Immediate re-engagement. Audit fee tier vs competitors; offer match. Schedule call within 48h.' :
+    primary === 'C2' ? 'Activate idle capital. Pitch BTC Yield+, Dual Investment, or 30-min strategy call.' :
+    primary === 'C3' ? 'Unlock latent volume. Custom fee proposal, private Earn rates, Launchpad allocation.' :
+    primary === 'C4' ? 'Fast-track to Rising Star pre-VIP tier. Lock in fee schedule before competitor outreach.' :
+    primary === 'C5' ? 'Cross-sell into Futures, Earn, and Copy Trading. Offer comp on first 10 derivative trades.' :
+    primary === 'C6' ? 'Lock in API infrastructure: co-location, raised rate limits, dedicated tech contact.'      :
+    'Maintain. Light-touch monthly check-in; surface new launches and tier benefits.';
+
+  return {
+    period: 'Trailing 60 days · point-in-time snapshot',
+
+    headline: [
+      { label: 'Group',       value: vip.group },
+      { label: 'Triggers',    value: vip.triggers.length ? vip.triggers.join(' · ') : 'None firing' },
+      { label: 'Last contact', value: vip.lastContactMode === 'None' ? 'Never recorded' : `${vip.lastContactMode} · ${vip.lastContactDays}d ago` },
+      { label: 'External',    value: vip.competitorTier || 'No external tier on file' },
+    ],
+
+    capital: [
+      { label: 'Assets under management', value: fmtUSD(vip.aum) },
+      { label: '30-day trading volume',   value: fmtUSD(vip.vol30d) },
+      { label: 'Volume / AUM turnover',   value: `${vip.turnover.toFixed(1)}× — ${turnoverStrength}` },
+      { label: 'Average ticket size',     value: fmtUSD(vip.avgTrade) },
+      { label: '90-day net deposit trend', value: `${vip.depositTrend > 0 ? '+' : ''}${vip.depositTrend}% — ${depositRead}` },
+    ],
+
+    engagement: [
+      { label: 'Active days (of last 30)',  value: `${vip.activeDays} — ${engagementRead}` },
+      { label: 'Days since last trade',     value: `${vip.recencyDays}` },
+      { label: 'Distinct pairs traded',     value: `${vip.pairs}` },
+      { label: 'Withdrawal frequency',      value: vip.withdrawFreq.charAt(0).toUpperCase() + vip.withdrawFreq.slice(1) },
+      { label: 'Referrals booked (90d)',    value: `${vip.referrals}` },
+    ],
+
+    flow: [
+      { label: 'Maker share of flow',    value: `${(vip.makerRatio*100).toFixed(0)}% — ${makerRead}` },
+      { label: 'Product breadth',        value: `${vip.products} of 5 — ${productMix}` },
+      { label: 'API integration',        value: vip.apiUser ? 'Active' : 'Not engaged' },
+    ],
+
+    scoring: [
+      { label: 'Core Score',       value: `${vip.score} / 100` },
+      { label: 'Peripheral Score', value: `${vip.peripheralScore} / 100` },
+      { label: 'AUM percentile',   value: `${vip.rawScores.aumPct.toFixed(0)}` },
+      { label: 'Volume percentile', value: `${vip.rawScores.volPct.toFixed(0)}` },
+    ],
+
+    action,
+  };
+};
+
+window.RFMScatter     = RFMScatter;
+window.MetricProfile  = MetricProfile;
+window.ScoreBreakdown = ScoreBreakdown;
+window.GroupBadge     = GroupBadge;
+window.TriggerPill    = TriggerPill;
+window.LastContact    = LastContact;
+window.Masthead       = Masthead;
+window.buildReport    = buildReport;
+window.fmtUSD         = fmtUSD;
+window.PAL            = PAL;
+window.chipFor        = chipFor;
+window.colorHex       = colorHex;
+</script>
+
+<!-- ===================== DASHBOARD ===================== -->
+<script type="text/babel" data-presets="env,react">
+const { useState: useStateD, useMemo: useMemoD } = React;
+
+function App() {
+  const scoredVips = useMemoD(() => window.computeScores(window.VIPS), []);
+
+  const [selectedId,  setSelectedId]  = useStateD('V001');
+  const [search,      setSearch]      = useStateD('');
+  const [filterGroup, setFilterGroup] = useStateD('All');
+  const [sortBy,      setSortBy]      = useStateD('score');
+  const [showReport,  setShowReport]  = useStateD(false);
+  const [copied,      setCopied]      = useStateD(false);
+
+  const groupFilters = ['All', 'Inactivity Risk', 'Increasing Activity', 'Steady'];
+
+  const filtered = useMemoD(() => {
+    let arr = scoredVips.filter(v => {
+      const matchSearch = search === '' || v.name.toLowerCase().includes(search.toLowerCase()) || v.id.toLowerCase().includes(search.toLowerCase());
+      const matchGroup  =
+        filterGroup === 'All' ||
+        v.group === filterGroup ||
+        (v.group === 'Both' && (filterGroup === 'Inactivity Risk' || filterGroup === 'Increasing Activity'));
+      return matchSearch && matchGroup;
+    });
+    arr.sort((a, b) => {
+      if (sortBy === 'score')      return b.score - a.score;
+      if (sortBy === 'peripheral') return b.peripheralScore - a.peripheralScore;
+      if (sortBy === 'aum')        return b.aum - a.aum;
+      if (sortBy === 'volume')     return b.vol30d - a.vol30d;
+      if (sortBy === 'turnover')   return a.turnover - b.turnover;
+      return 0;
+    });
+    return arr;
+  }, [scoredVips, search, filterGroup, sortBy]);
+
+  const selected = scoredVips.find(v => v.id === selectedId);
+
+  const groupCounts = useMemoD(() => {
+    const counts = { 'Inactivity Risk': 0, 'Increasing Activity': 0, 'Steady': 0 };
+    scoredVips.forEach(v => {
+      if (v.group === 'Both') { counts['Inactivity Risk']++; counts['Increasing Activity']++; }
+      else if (counts[v.group] !== undefined) counts[v.group]++;
+    });
+    return counts;
+  }, [scoredVips]);
+
+  const totalAUM       = scoredVips.reduce((s, v) => s + v.aum, 0);
+  const totalVol       = scoredVips.reduce((s, v) => s + v.vol30d, 0);
+  const upgradeTargets = scoredVips.filter(v => v.group === 'Increasing Activity' || v.group === 'Both').length;
+
+  const handleCopy = () => {
+    const r = window.buildReport(selected);
+    const plain = [
+      `MEXC VIP DESK — 60-DAY ACCOUNT BRIEF`,
+      `${selected.name} (${selected.id}) · ${selected.region}`,
+      r.period,
+      ``,
+      `── HEADLINE ──`,
+      ...r.headline.map(x => `${x.label.padEnd(14)}${x.value}`),
+      ``,
+      `── CAPITAL & FLOW ──`,
+      ...r.capital.map(x => `${x.label.padEnd(34)}${x.value}`),
+      ``,
+      `── ENGAGEMENT ──`,
+      ...r.engagement.map(x => `${x.label.padEnd(34)}${x.value}`),
+      ``,
+      `── TRADING PROFILE ──`,
+      ...r.flow.map(x => `${x.label.padEnd(34)}${x.value}`),
+      ``,
+      `── SCORING ──`,
+      ...r.scoring.map(x => `${x.label.padEnd(34)}${x.value}`),
+      ``,
+      `── RECOMMENDED ACTION ──`,
+      r.action,
+    ].join('\n');
+    navigator.clipboard.writeText(plain);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  };
+
+  const Search      = window.Search;
+  const Sparkles    = window.Sparkles;
+  const Copy        = window.Copy;
+  const Check       = window.Check;
+  const X           = window.X;
+  const ArrowUpRight = window.ArrowUpRight;
+
+  return (
+    <div className="min-h-screen text-ink">
+      <window.Masthead totalAUM={totalAUM} totalVol={totalVol} upgradeTargets={upgradeTargets} scoredCount={scoredVips.length} />
+
+      {/* FILTER BAR */}
+      <div className="bg-ink text-paper">
+        <div className="max-w-[1480px] mx-auto px-6 py-2 flex items-center gap-6 overflow-x-auto whitespace-nowrap">
+          <span className="font-mono text-[10px] smallcaps text-[#DCCBAB]">Filter</span>
+          <span className="text-[#9A8D77]">·</span>
+          {groupFilters.map(g => {
+            const count = g === 'All' ? scoredVips.length : (groupCounts[g] || 0);
+            const active = filterGroup === g;
+            const dotKey = g === 'Inactivity Risk' ? 'oxblood' : g === 'Increasing Activity' ? 'olive' : g === 'Steady' ? 'ink3' : null;
+            const dotColor = dotKey ? window.colorHex[dotKey] : null;
+            return (
+              <button key={g} onClick={() => setFilterGroup(g)}
+                className={`flex items-center gap-2 font-mono text-[11px] smallcaps transition ${active ? 'text-[#F1E6D2]' : 'text-[#9A8D77] hover:text-[#DCCBAB]'}`}>
+                {dotColor && <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: dotColor }} />}
+                <span className={active ? 'underline underline-offset-4 decoration-[#A47324] decoration-2' : ''}>{g}</span>
+                <span className="opacity-60 tabular-nums">{String(count).padStart(2,'0')}</span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* BODY */}
+      <div className="max-w-[1480px] mx-auto px-6 py-6">
+        <div className="grid grid-cols-12 gap-6">
+
+          {/* ACCOUNTS LIST */}
+          <aside className="col-span-4">
+            <SectionHead title="Accounts" sub={`${filtered.length} of ${scoredVips.length} · sorted by ${sortByLabel(sortBy)}`} />
+
+            <div className="hairline-b py-3 space-y-2.5">
+              <div className="relative">
+                <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-ink3" />
+                <input type="text" placeholder="Search by name or VIP id…" value={search} onChange={e => setSearch(e.target.value)}
+                  className="w-full bg-paper2/60 border border-ink/70 px-9 py-2 text-[13px] font-display placeholder-ink3 focus:outline-none focus:bg-paper2 focus:border-ink" />
+              </div>
+              <div className="flex items-center gap-1 flex-wrap">
+                <span className="font-mono text-[9px] smallcaps text-ink3 mr-1">Sort by</span>
+                {[
+                  { k: 'score',      l: 'Core' },
+                  { k: 'peripheral', l: 'Peripheral' },
+                  { k: 'aum',        l: 'AUM' },
+                  { k: 'volume',     l: 'Volume' },
+                  { k: 'turnover',   l: 'Underused' },
+                ].map(o => (
+                  <button key={o.k} onClick={() => setSortBy(o.k)}
+                    className={`px-2 py-0.5 font-mono text-[10px] smallcaps transition border ${sortBy === o.k ? 'bg-ink text-paper border-ink' : 'border-ink/30 text-ink2 hover:border-ink'}`}>
+                    {o.l}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="divide-y divide-ink/15 max-h-[calc(100vh-200px)] overflow-y-auto">
+              {filtered.map((v, i) => {
+                const isSelected = v.id === selectedId;
+                return (
+                  <button key={v.id} onClick={() => setSelectedId(v.id)}
+                    className={`w-full text-left py-3 row-hover ${isSelected ? 'bg-paper3/55 shadow-[inset_4px_0_0_#822026]' : 'hover:bg-paper2/60'}`}>
+                    <div className="grid grid-cols-12 gap-2 px-3">
+                      <div className="col-span-1 font-mono text-[10px] tabular-nums text-ink3 mt-1">{String(i+1).padStart(2,'0')}</div>
+                      <div className="col-span-8 min-w-0 space-y-1.5">
+                        <div className="flex items-baseline gap-2">
+                          <span className="font-display font-medium text-[16px] leading-tight text-ink truncate">{v.name}</span>
+                          <span className="font-mono text-[9px] smallcaps text-ink3">{v.region}</span>
+                        </div>
+                        <div className="flex items-center gap-1.5 flex-wrap">
+                          <window.GroupBadge group={v.group} size="sm" />
+                          <span className="font-mono text-[10px] tabular-nums text-ink2">{window.fmtUSD(v.aum)}</span>
+                          {v.competitorTier && <span className="font-display text-[10px] text-ink3">at {v.competitorTier}</span>}
+                        </div>
+                        {v.triggers.length > 0 && (
+                          <div className="flex items-center gap-1 flex-wrap">
+                            {v.triggers.map(t => <window.TriggerPill key={t} id={t} size="sm" />)}
+                          </div>
+                        )}
+                        <window.LastContact days={v.lastContactDays} mode={v.lastContactMode} size="sm" />
+                      </div>
+                      <div className="col-span-3 text-right flex flex-col items-end justify-start">
+                        <div className="font-mono text-[8.5px] smallcaps text-ink3">Core / Per</div>
+                        <div className="flex items-baseline gap-1">
+                          <span className="font-display tabular-nums font-bold text-[26px] leading-none text-ink">{v.score}</span>
+                          <span className="text-ink3 font-mono text-[12px]">/</span>
+                          <span className="font-display tabular-nums font-semibold text-[16px] text-ink2">{v.peripheralScore}</span>
+                        </div>
+                        <div className="mt-1.5 flex items-end gap-[2px] h-[14px]">
+                          {[v.coreBreakdown.aum, v.coreBreakdown.vol, v.coreBreakdown.breadth].map((b, k) => (
+                            <div key={k} className="w-[6px] border border-ink/70" style={{ height: `${(b/50)*100}%`, background: [window.PAL.ink, window.PAL.teal, window.PAL.olive][k] }} />
+                          ))}
+                          <span className="w-[1px] mx-[2px] h-full bg-ink/30" />
+                          {[v.peripheralBreakdown.referral, v.peripheralBreakdown.active, v.peripheralBreakdown.deposit].map((b, k) => (
+                            <div key={k} className="w-[6px] border border-ink/70" style={{ height: `${(b/50)*100}%`, background: [window.PAL.oxblood, window.PAL.gold, window.PAL.plum][k] }} />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                );
+              })}
+              {filtered.length === 0 && (
+                <div className="p-8 text-center font-display text-ink3">— No names answer this filter. —</div>
+              )}
+            </div>
+
+            <div className="hairline-t pt-2 mt-2 font-mono text-[9px] smallcaps text-ink3">
+              Last refreshed · {fmtDateInline()}
+            </div>
+          </aside>
+
+          {/* SELECTED ACCOUNT */}
+          <main className="col-span-8 space-y-6">
+            {selected && (
+              <>
+                <article className="pt-1">
+                  <div className="flex items-baseline justify-between mb-2">
+                    <div className="font-mono text-[10px] smallcaps text-[#822026]">Selected Account</div>
+                    <div className="font-mono text-[10px] smallcaps text-ink3">{selected.id}</div>
+                  </div>
+
+                  <div className="grid grid-cols-12 gap-6 items-end pb-4 hairline-b">
+                    <div className="col-span-8">
+                      <h2 className="font-display font-bold text-[52px] leading-[0.95] tracking-tight text-ink">{selected.name}</h2>
+                      <div className="mt-3 flex flex-wrap items-center gap-3">
+                        <window.GroupBadge group={selected.group} size="md" />
+                        <span className="font-mono text-[10px] smallcaps text-ink3">Region</span>
+                        <span className="font-display text-[14px] text-ink">{selected.region}</span>
+                        {selected.competitorTier && (
+                          <>
+                            <span className="text-ink3">·</span>
+                            <span className="font-mono text-[10px] smallcaps text-ink3">External tier</span>
+                            <span className="font-display text-[14px] text-ink">{selected.competitorTier}</span>
+                            <span className="stamp text-[8px] px-1.5 py-0.5 -translate-y-0.5">Match Available</span>
+                          </>
+                        )}
+                      </div>
+                      {selected.triggers.length > 0 && (
+                        <div className="mt-3 flex items-center gap-1.5 flex-wrap">
+                          <span className="font-mono text-[9px] smallcaps text-ink3 mr-1">Triggers</span>
+                          {selected.triggers.map(t => <window.TriggerPill key={t} id={t} size="md" />)}
+                        </div>
+                      )}
+                      <div className="mt-2.5">
+                        <span className="font-mono text-[9px] smallcaps text-ink3 mr-2">Last contact</span>
+                        <window.LastContact days={selected.lastContactDays} mode={selected.lastContactMode} size="md" />
+                      </div>
+                    </div>
+
+                    <div className="col-span-4 grid grid-cols-2 border border-ink/80 bg-paper2/55">
+                      <div className="p-3 border-r border-ink/80">
+                        <div className="font-mono text-[9px] smallcaps text-ink3">Core</div>
+                        <div className="font-display tabular-nums font-bold text-[56px] leading-none text-ink">{selected.score}</div>
+                        <div className="font-mono text-[10px] smallcaps text-ink3 mt-1">size · sophistication</div>
+                      </div>
+                      <div className="p-3">
+                        <div className="font-mono text-[9px] smallcaps text-ink3">Peripheral</div>
+                        <div className="font-display tabular-nums font-bold text-[56px] leading-none text-[#A47324]">{selected.peripheralScore}</div>
+                        <div className="font-mono text-[10px] smallcaps text-ink3 mt-1">engagement quality</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-12 gap-6 pt-4">
+                    <div className="col-span-7">
+                      <div className="border border-ink/80">
+                        <div className="grid grid-cols-3 hairline-b">
+                          <Stat label="AUM"        val={window.fmtUSD(selected.aum)} />
+                          <Stat label="30-day volume" val={window.fmtUSD(selected.vol30d)} accent="text-[#185660]" />
+                          <Stat label="Turnover"   val={`${selected.turnover.toFixed(1)}×`} />
+                        </div>
+                        <div className="grid grid-cols-2">
+                          <Stat label="Avg ticket"  val={window.fmtUSD(selected.avgTrade)} />
+                          <Stat label="Maker share" val={`${(selected.makerRatio*100).toFixed(0)}%`} accent="text-[#6E2A4E]" />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-span-5">
+                      <button onClick={() => setShowReport(true)}
+                        className="w-full h-full bg-ink hover:bg-[#3B342B] text-paper py-3 px-4 font-mono smallcaps text-[12px] flex items-center justify-between group transition">
+                        <span className="flex items-center gap-2">
+                          <Sparkles className="w-4 h-4 text-[#A47324]" />
+                          <span>Open 60-day brief on {selected.name.split(' ')[0]}</span>
+                        </span>
+                        <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                      </button>
+                    </div>
+                  </div>
+                </article>
+
+                <div className="grid grid-cols-12 gap-6">
+                  <section className="col-span-7 pt-1">
+                    <SectionHead title="Eleven Indicators" sub="Leading indicators of latent capacity" />
+                    <div className="pt-2"><window.MetricProfile vip={selected} /></div>
+                  </section>
+                  <section className="col-span-5 pt-1">
+                    <SectionHead title="Score Composition" sub="Two composites · one standalone gauge" />
+                    <div className="pt-2"><window.ScoreBreakdown vip={selected} /></div>
+                  </section>
+                </div>
+
+                <section className="pt-1">
+                  <SectionHead title="Segmentation Map" sub="Recency × Monetary · mark size = active days · click any mark to inspect" />
+                  <div className="pt-3 grid grid-cols-12 gap-6">
+                    <div className="col-span-9">
+                      <window.RFMScatter vips={scoredVips} onSelect={setSelectedId} selectedId={selectedId} />
+                    </div>
+                    <div className="col-span-3"><Legend /></div>
+                  </div>
+                </section>
+
+                <footer className="hairline-t pt-3 pb-6 flex items-center justify-between font-mono text-[10px] smallcaps text-ink3">
+                  <div>MEXC VIP Desk · Relationship Manager Console</div>
+                  <div>Core = .46 AUM + .31 Vol + .23 Breadth×TOR · Peripheral = .40 Ref + .40 Active + .20 Deposit</div>
+                </footer>
+              </>
+            )}
+          </main>
+        </div>
+      </div>
+
+      {/* REPORT MODAL */}
+      {showReport && selected && (() => {
+        const report = window.buildReport(selected);
+        const Section = ({ title, rows, dense }) => (
+          <div className="mb-5">
+            <div className="font-mono text-[10px] smallcaps text-[#822026] hairline-b pb-1 mb-2">{title}</div>
+            <div className={dense ? 'grid grid-cols-2 gap-x-6 gap-y-1' : 'space-y-1.5'}>
+              {rows.map(r => (
+                <div key={r.label} className="flex items-baseline justify-between gap-3 hairline-b py-1">
+                  <span className="font-mono text-[10px] smallcaps text-ink3 flex-shrink-0">{r.label}</span>
+                  <span className="font-display text-[13px] text-ink text-right leading-tight">{r.value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+        return (
+          <div className="fixed inset-0 z-50 bg-[#1B1815]/85 flex items-center justify-center p-6 overflow-y-auto" onClick={() => setShowReport(false)}>
+            <div className="bg-paper border-[1.5px] border-ink max-w-[760px] w-full shadow-[8px_8px_0_#1B1815] my-auto" onClick={e => e.stopPropagation()}>
+
+              {/* Report header */}
+              <div className="px-7 pt-6 pb-4 hairline-b">
+                <div className="flex items-start justify-between mb-3">
+                  <div className="font-mono text-[10px] smallcaps text-[#822026]">Internal Account Brief</div>
+                  <button onClick={() => setShowReport(false)} className="text-ink2 hover:text-ink">
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
+                <div className="font-display font-bold text-[34px] leading-[1.05] tracking-tight text-ink">{selected.name}</div>
+                <div className="mt-1 flex items-center gap-3 font-mono text-[10px] smallcaps text-ink3">
+                  <span>{selected.id}</span>
+                  <span>·</span>
+                  <span>{selected.region}</span>
+                  <span>·</span>
+                  <span>{report.period}</span>
+                </div>
+              </div>
+
+              {/* Report body */}
+              <div className="px-7 py-5">
+                <Section title="Headline"          rows={report.headline}   dense />
+                <Section title="Capital & Flow"    rows={report.capital} />
+                <Section title="Engagement"        rows={report.engagement} />
+                <Section title="Trading Profile"   rows={report.flow} />
+                <Section title="Scoring"           rows={report.scoring}    dense />
+
+                {/* Recommended action */}
+                <div>
+                  <div className="font-mono text-[10px] smallcaps text-[#822026] hairline-b pb-1 mb-2">Recommended Action</div>
+                  <div className="bg-paper2/70 border-l-[3px] border-[#822026] px-4 py-3 font-display text-[14px] leading-[1.55] text-ink">
+                    {report.action}
+                  </div>
+                </div>
+              </div>
+
+              {/* Footer / actions */}
+              <div className="px-7 py-4 hairline-t bg-paper2/40 flex items-center justify-between">
+                <div className="font-mono text-[9px] smallcaps text-ink3">
+                  Compiled by · M. Park, Senior RM · {fmtDateInline()}
+                </div>
+                <div className="flex items-center gap-3">
+                  <button onClick={() => window.print()}
+                    className="font-mono text-[10px] smallcaps text-ink2 hover:text-ink underline underline-offset-4 decoration-[#A47324]">
+                    Print / Save PDF
+                  </button>
+                  <button onClick={handleCopy}
+                    className="px-5 py-2.5 bg-[#822026] hover:bg-[#5B161B] text-paper font-mono text-[11px] smallcaps tracking-widest flex items-center gap-2 transition">
+                    {copied
+                      ? (<><Check className="w-4 h-4" /><span>Copied to clipboard</span></>)
+                      : (<><Copy className="w-4 h-4" /><span>Copy as text</span></>)}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      })()}
+    </div>
+  );
+}
+
+function SectionHead({ title, sub }) {
+  return (
+    <div className="hairline-b pb-2 mb-2">
+      <h3 className="font-display font-semibold text-[28px] leading-[0.95] text-ink">{title}</h3>
+      {sub && <div className="font-mono text-[11px] smallcaps text-ink3 mt-1.5">{sub}</div>}
+    </div>
+  );
+}
+
+function Stat({ label, val, accent = '' }) {
+  return (
+    <div className="px-3 py-2.5">
+      <div className="font-mono text-[9px] smallcaps text-ink3">{label}</div>
+      <div className={`font-display tabular-nums font-semibold text-[20px] leading-tight ${accent || 'text-ink'}`}>{val}</div>
+    </div>
+  );
+}
+
+function Legend() {
+  const items = [
+    { color: 'oxblood', label: 'Inactivity Risk',    desc: 'Churning or sleeping' },
+    { color: 'olive',   label: 'Increasing Activity', desc: 'Capacity to grow' },
+    { color: 'gold',    label: 'Cross-Pressure',      desc: 'Both pressures present' },
+    { color: 'ink3',    label: 'Steady Hand',          desc: 'Healthy baseline' },
+  ];
+  return (
+    <div className="border border-ink/80 p-3 space-y-3 bg-paper2/55">
+      <div className="font-mono text-[9px] smallcaps text-ink3 hairline-b pb-1">Legend</div>
+      {items.map(it => (
+        <div key={it.label} className="flex items-start gap-2">
+          <span className="w-3 h-3 mt-1 border border-ink rounded-full" style={{ backgroundColor: window.colorHex[it.color] }} />
+          <div>
+            <div className="font-display font-medium text-[14px] text-ink leading-tight">{it.label}</div>
+            <div className="font-mono text-[9px] smallcaps text-ink3 leading-tight mt-0.5">{it.desc}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function sortByLabel(k) {
+  return ({ score: 'core score', peripheral: 'peripheral score', aum: 'AUM', volume: '30-d volume', turnover: 'turnover (most underused first)' })[k] || k;
+}
+
+function fmtDateInline() {
+  const d = new Date(2026, 4, 10, 17, 30);
+  return `${d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })}, ${d.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })} HKT`;
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+</script>
+</body>
+</html>
